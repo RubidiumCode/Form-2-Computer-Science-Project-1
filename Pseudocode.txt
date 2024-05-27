@@ -1,0 +1,59 @@
+Define a function get_sack_info with parameters content and weight
+    If the first character of content is "c" or "C"
+        If weight is greater than or equal to 25.1
+            Return False, "Sack is too heavy", "Concrete"
+        Else if weight is less than or equal to 24.9
+            Return False, "Sack is too light", "Concrete"
+        Else
+            Return True, "Concrete"
+    Else if the first character of content is "g" or "G"
+        If weight is greater than or equal to 50.1
+            Return False, "Sack is too heavy", "Gravel"
+        Else if weight is less than or equal to 49.9
+            Return False, "Sack is too light", "Gravel"
+        Else
+            Return True, "Gravel"
+    Else if the first character of content is "s" or "S"
+        If weight is greater than or equal to 50.1
+            Return False, "Sack is too heavy", "Sand"
+        Else if weight is less than or equal to 49.9
+            Return False, "Sack is too light", "Sand"
+        Else
+            Return True, "Sand"
+    Else
+        Return False, "Invalid Sack Type", "Unknown"
+
+Initialize number_of_sand_sacks, number_of_gravel_sacks, number_of_concrete_sacks, total_sand_weight, total_gravel_weight, total_concrete_weight, number_of_rejected_sacks to 0
+
+While True
+    Display sack options to the user
+    Get sack_input_type from the user
+    If sack_input_type is "d" or "D"
+        Break the loop
+    Clear the screen
+    Ask the user to enter the weight of the sack
+    Get sack_input_weight from the user
+    Clear the screen
+    Call get_sack_info with sack_input_type and sack_input_weight and store the result in sack_info
+    If the first element of sack_info is True
+        Display the accepted sack type and its weight
+        If the second element of sack_info is "Sand"
+            Increment total_sand_weight by sack_input_weight
+            Increment number_of_sand_sacks by 1
+        Else if the second element of sack_info is "Gravel"
+            Increment total_gravel_weight by sack_input_weight
+            Increment number_of_gravel_sacks by 1
+        Else if the second element of sack_info is "Concrete"
+            Increment total_concrete_weight by sack_input_weight
+            Increment number_of_concrete_sacks by 1
+    Else
+        Display the rejected sack type and the reason for rejection
+        Increment number_of_rejected_sacks by 1
+
+Clear the screen
+
+Display the total order weight and the total number of rejected sacks
+
+Calculate concrete_cost, sand_cost, gravel_cost, total_cost, number_of_special_packs, discount_price
+
+Display the costs, number of special packs, amount saved, and total price
